@@ -21,7 +21,10 @@ sudo ufw allow 443
 ```
 ## 7、**安装v2ray**
 ```markdown
-bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
+~~bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)~~
+sudo curl  https://get.acme.sh | sh 
+acme.sh  --register-account  -m EMAIL_ADDRESS --server zerossl
+
 ```
 ## 8、**生成证书**
 ```markdown
@@ -29,6 +32,8 @@ sudo curl  https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme
 source ~/.bashrc
 export CF_Key="API_KEY"
 export CF_Email="EMAIL_ADDRESS"
+
+没有生效则直接写入~/.acme.sh/account.conf当中，参考https://github.com/acmesh-official/acme.sh/wiki/dnsapi#1-use-cloudflare-domain-api-to-automatically-issue-cert
 
 sudo ~/.acme.sh/acme.sh --issue --dns dns_cf -d domainname -d *.domainname -k ec-256
 sudo ~/.acme.sh/acme.sh --installcert -d domainname -d *.domainname --fullchainpath /usr/local/etc/v2ray/domainname.crt --keypath /usr/local/etc/v2ray/domainname.key --ecc
