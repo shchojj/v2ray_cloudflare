@@ -20,8 +20,8 @@ sudo ufw allow 80
 sudo ufw allow 443
 ```
 ## 7、**安装v2ray**
-```markdown
 ~~bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)~~
+```markdown
 sudo curl  https://get.acme.sh | sh 
 acme.sh  --register-account  -m EMAIL_ADDRESS --server zerossl
 
